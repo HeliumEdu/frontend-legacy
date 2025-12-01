@@ -27,7 +27,7 @@
         "nodemon": "^3.1.11"
     },
     "dependencies": {
-        "chokidar": "^4.0.3",
+        "chokidar": "^5.0.0",
         "clean-css-cli": "^5.6.3",
         "nunjucks-cli": "^1.0.0",
         "uglify-js": "^3.19.3"
