@@ -83,16 +83,16 @@ function HeliumSettings() {
 
     self.create_externalcalendar = function (id, title, url, shown_on_calendar, color) {
         const row = $('<tr id="externalcalendar-' + id + '">');
-        row.append($('<td>').append('<a class="cursor-hover external-title">' + title + '</a>'));
-        row.append($('<td class="hidden-xs nowrap overflow-hidden">')
+        row.append($('<td class="overflow-hidden">').append('<a class="cursor-hover external-title">' + title + '</a>'));
+        row.append($('<td class="nowrap overflow-hidden">')
                        .append('<a class="cursor-hover external-url">' + url + '</a>'));
         row.append($('<td>').append(
             '<input type="checkbox" class="ace shown-on-calendar" ' + (shown_on_calendar ? 'checked="checked"' : '')
             + '/><span class="lbl" />'));
         row.append(
-            $('<td>')
+            $('<td class="overflow-hidden">')
                 .append($("<input type=\"text\" class=\"color-picker\" />")));
-        row.append($('<td class="hidden-xs">').append(
+        row.append($('<td>').append(
             '<div class="btn-group"><button type="button" aria-label="Delete External Calendar" class="btn btn-xs btn-danger delete-externalcalendar"><i class="icon-trash bigger-120"></i></button></div></td></tr>'));
 
         $("#externalcalendars-table-body").append(row);
@@ -730,24 +730,8 @@ function HeliumSettings() {
 // Initialize HeliumSettings and give a reference to the Helium object
 helium.settings = new HeliumSettings();
 
-$(window).resize(function () {
-    "use strict";
-
-    if ($(document).width() < 768) {
-        $("#no-externalcalendars td").attr('colspan', '3');
-    } else {
-        $("#no-externalcalendars td").attr('colspan', '5');
-    }
-});
-
 $(document).ready(function () {
     "use strict";
-
-    if ($(document).width() < 768) {
-        $("#no-externalcalendars td").attr('colspan', '3');
-    } else {
-        $("#no-externalcalendars td").attr('colspan', '5');
-    }
 
     $.when.apply($, helium.ajax_calls).done(function () {
         $("#loading-preferences").spin(false);
