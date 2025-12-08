@@ -388,8 +388,7 @@ function Helium() {
 
         const msg_time = $('<span class="msg-time">');
         reminder_body.append(msg_time);
-        msg_time.append('<i class="icon-time"></i>');
-        msg_time.append('<span>&nbsp;' + start + '</span>');
+        msg_time.append('<span>🕘 ' + start + '</span>');
 
         list_item.on("click", function () {
             const reminder_for = $(this).find('[id^="reminder-for-"]');
@@ -465,7 +464,7 @@ function Helium() {
         $($($("#reminder-bell-count").parent()).parent()).append(list_item);
 
         if (!reminder.sent && show_alert) {
-            alert(msg_body.text() + " on" + msg_time.text());
+            alert(msg_body.text() + "\n" + msg_time.text());
         }
         if (!reminder.sent) {
             const put_data = {
@@ -478,18 +477,16 @@ function Helium() {
 
     this.process_reminders = function (reminders, show_alert) {
         if (!helium.data_has_err_msg(reminders)) {
-            let reminder_ids = []
-            $.each(reminders, function (i, reminder) {
-                if ($("#reminder-popup-" + reminder.id).length === 0) {
-                    helium.add_reminder_to_page(reminder, show_alert);
-                }
-                reminder_ids.push(reminder.id);
+            const existing_reminder_ids = [];
+            $.each($("[id^='reminder-popup-']"), function (i, reminder) {
+                existing_reminder_ids.push(reminder.id);
             });
-            // Remove stale reminders
-            $.each($("[id^='reminder-popup-']"), function () {
-                if (!reminder_ids.includes(parseInt($(this).attr("id").split("-")[2]))) {
-                    $(this).remove();
-                }
+
+            // Clear all reminders, and re-populate (sorted) only those still relevant
+            $("[id^='reminder-popup-']").remove();
+
+            $.each(reminders, function (i, reminder) {
+                helium.add_reminder_to_page(reminder, !existing_reminder_ids.includes(reminder.id) && show_alert);
             });
 
             $("#reminder-bell-count")
