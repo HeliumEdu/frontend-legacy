@@ -1840,7 +1840,7 @@ function HeliumCalendar() {
             end = moment(end.format()).format();
         }
 
-        cloned["title"] = $("#homework-title").val() + " (Cloned)";
+        cloned["title"] = helium.clone_title($("#homework-title").val());
         cloned["start"] = start;
         cloned["end"] = end;
         cloned["course"] = $("#homework-class").val();

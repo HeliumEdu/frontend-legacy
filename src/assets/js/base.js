@@ -529,6 +529,21 @@ function Helium() {
 
         return colors[index];
     }
+
+    this.clone_title = function (title) {
+        const parts = title.split(" ");
+        const last = parts[parts.length - 1];
+
+        const num = parseInt(last, 10);
+
+        if (!isNaN(num)) {
+            parts[parts.length - 1] = (num + 1).toString();
+        } else {
+            parts.push("1");
+        }
+
+        return parts.join(" ");
+    }
 }
 
 // Initialize the Helium object
