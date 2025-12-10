@@ -27,7 +27,9 @@ function Helium() {
     ];
     this.REMINDER_TYPE_CHOICES = [
         "Popup",
-        "Email"
+        "Email",
+        "Text",
+        "Push"
     ];
 
     this.QTIP_SHOW_INTERVAL = 250;
@@ -602,12 +604,6 @@ $(document).ready(function () {
                     $.extend(helium.USER_PREFS, data);
 
                     localStorage.setItem("refresh_token_lock", "false");
-
-                    if (helium.USER_PREFS.profile !== null
-                        && helium.USER_PREFS.profile.phone
-                        !== null) {
-                        helium.REMINDER_TYPE_CHOICES.push("Text");
-                    }
 
                     if (typeof Rollbar !== "undefined") {
                         Rollbar.configure(
