@@ -1880,6 +1880,15 @@ function HeliumCalendar() {
                  + ">" + helium.REMINDER_OFFSET_TYPE_CHOICES[i] + "</option>");
         }
         for (i = 0; i < helium.REMINDER_TYPE_CHOICES.length; i += 1) {
+            if (helium.REMINDER_TYPE_CHOICES[i] == "Text"
+                && (helium.USER_PREFS.profile === null || helium.USER_PREFS.profile.phone === null)) {
+                continue;
+            }
+            if (helium.REMINDER_TYPE_CHOICES[i] == "Push"
+                && !(helium.USER_PREFS.email.endsWith("@heliumedu.com") || helium.USER_PREFS.email.endsWith("@alexlaird.com"))) {
+                continue;
+            }
+
             type_options +=
                 ("<option value=\"" + i + "\"" + (i === parseInt(reminder.type) ? " selected=\"true\"" : "") + ">"
                  + helium.REMINDER_TYPE_CHOICES[i] + "</option>");
