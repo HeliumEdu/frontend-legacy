@@ -24,7 +24,7 @@ $("#forgot-form").submit(function (e) {
             $("#status").html(helium.get_error_msg(data)).addClass("alert-warning").removeClass("hidden");
         } else {
             $("#status").html(
-                "You've been emailed a temporary password. Log in to your account immediately using the temporary password, then change your password")
+                "You've been emailed a temporary password. Log in to your account immediately using the temporary password, then change your password.")
                 .addClass("alert-info").removeClass("hidden");
         }
     }, email);
