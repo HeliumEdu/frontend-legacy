@@ -513,6 +513,17 @@ function Helium() {
         }
     }
 
+    this.get_date_from_hash = function () {
+        const query_string = window.location.search;
+        const query_params = new URLSearchParams(query_string);
+        const initial_date = moment(query_params.get('initialDate'), helium.HE_DATE_STRING_SERVER);
+        if (initial_date.isValid()) {
+            return initial_date;
+        } else {
+            return null;
+        }
+    }
+
     this.get_color_for_priority = function (value) {
         const index = Math.min(Math.floor((value - 1) / 10), 9);
 
