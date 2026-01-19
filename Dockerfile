@@ -16,7 +16,7 @@ COPY config config
 COPY src src
 COPY package*.json .
 
-RUN npm install
+RUN npm install --legacy-peer-deps
 RUN --mount=type=secret,id=frontend_rollbar_client_item_access_token,env=FRONTEND_ROLLBAR_CLIENT_ITEM_ACCESS_TOKEN \
     npm run build
 
