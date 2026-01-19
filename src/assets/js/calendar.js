@@ -1385,6 +1385,7 @@ function HeliumCalendar() {
                         }
                     },
                     firstDay: helium.USER_PREFS.settings.week_starts_on,
+                    defaultDate: helium.get_date_from_hash(),
                     header: {
                         left: "today prev,next title",
                         right: self.DEFAULT_VIEWS.toString()
