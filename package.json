@@ -5,12 +5,12 @@
     "author": "Alex Laird",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/HeliumEdu/frontend/issues"
+        "url": "https://github.com/HeliumEdu/frontend-legacy/issues"
     },
-    "homepage": "https://github.com/HeliumEdu/frontend#readme",
+    "homepage": "https://github.com/HeliumEdu/frontend-legacy#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/HeliumEdu/frontend.git"
+        "url": "git+https://github.com/HeliumEdu/frontend-legacy.git"
     },
     "engines": {
         "node": ">=20"
