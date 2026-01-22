@@ -1,11 +1,11 @@
 <p align="center"><img src="https://www.heliumedu.com/assets/img/logo_full_blue.png" /></p>
 
-[![Build](https://img.shields.io/github/actions/workflow/status/HeliumEdu/frontend/build.yml)](https://github.com/HeliumEdu/frontend/actions/workflows/build.yml)
-![GitHub License](https://img.shields.io/github/license/heliumedu/frontend)
+[![Build](https://img.shields.io/github/actions/workflow/status/HeliumEdu/frontend-legacy/build.yml)](https://github.com/HeliumEdu/frontend-legacy/actions/workflows/build.yml)
+![GitHub License](https://img.shields.io/github/license/heliumedu/frontend-legacy)
 
-# Helium Frontend
+# Helium Frontend (Legacy)
 
-The `frontend` for [Helium](https://www.heliumedu.com/).
+The (legacy) `frontend` for [Helium](https://www.heliumedu.com/).
 
 Released container images are published to [Helium's AWS ECR](https://gallery.ecr.aws/heliumedu/).
 
