@@ -19,8 +19,8 @@ else
   make install
 
   # Clobber the cloned frontend and instead symlink back to the current directory, so tests run against working copy changes
-  rm -rf projects/frontend
-  ln -s $FRONTEND_DIR projects/frontend
+  rm -rf projects/frontend-legacy
+  ln -s $FRONTEND_DIR projects/frontend-legacy
 fi
 
 PWD=$(pwd)
