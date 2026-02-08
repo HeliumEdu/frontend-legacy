@@ -771,7 +771,7 @@ $(document).ready(function () {
         $("#id_calendar_event_limit").prop("checked", helium.USER_PREFS.settings.calendar_event_limit);
         $("#id_calendar_use_category_colors").prop("checked", helium.USER_PREFS.settings.calendar_use_category_colors);
         $("#id_remember_filter_state").prop("checked", helium.USER_PREFS.settings.remember_filter_state);
-        $("#id_default_reminder_type").val(helium.USER_PREFS.settings.default_reminder_type);
+        $("#id_default_reminder_type").val(helium.USER_PREFS.settings.default_reminder_type ? 0 : helium.USER_PREFS.settings.default_reminder_type);
         $("#id_default_reminder_offset").val(helium.USER_PREFS.settings.default_reminder_offset);
         $("#id_default_reminder_offset_type").val(helium.USER_PREFS.settings.default_reminder_offset_type);
         $("#id_phone").val(helium.USER_PREFS.profile.phone);

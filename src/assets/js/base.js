@@ -28,8 +28,7 @@ function Helium() {
     this.REMINDER_TYPE_CHOICES = [
         "Popup",
         "Email",
-        "Text",
-        "Push"
+        "Text"
     ];
 
     this.QTIP_SHOW_INTERVAL = 250;
