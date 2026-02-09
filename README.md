@@ -5,7 +5,7 @@
 
 # Helium Frontend (Legacy)
 
-The (legacy) `frontend` for [Helium](https://www.heliumedu.com/).
+The legacy `frontend` for [Helium](https://www.heliumedu.com/). The new `frontend` can be found [here](https://github.com/HeliumEdu/frontend).
 
 Released container images are published to [Helium's AWS ECR](https://gallery.ecr.aws/heliumedu/).
 
