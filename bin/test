@@ -24,6 +24,9 @@ else
   # Clobber the cloned frontend and instead symlink back to the current directory, so tests run against working copy changes
   rm -rf projects/frontend-legacy
   ln -s $FRONTEND_DIR projects/frontend-legacy
+  cd projects/frontend-legacy
+  make build-docker
+  cd $HELIUM_DIR
 fi
 
 PWD=$(pwd)
