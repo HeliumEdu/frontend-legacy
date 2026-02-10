@@ -17,6 +17,9 @@ else
   git clone git@github.com:HeliumEdu/deploy.git $HELIUM_DIR
   cd $HELIUM_DIR
   make install
+  cd projects/platform
+  make build-docker
+  cd $HELIUM_DIR
 
   # Clobber the cloned frontend and instead symlink back to the current directory, so tests run against working copy changes
   rm -rf projects/frontend-legacy
@@ -38,4 +41,6 @@ fi
 git pull
 
 cd $HELIUM_DIR
-make start test-cluster
+./projects/platform/bin/runserver
+./projects/platform/bin/frontend-legacy
+make test-cluster
