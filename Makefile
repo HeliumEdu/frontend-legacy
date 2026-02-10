@@ -8,7 +8,7 @@ PLATFORM ?= arm64
 ENVIRONMENT ?= prod
 
 install:
-	NODE_ENV=production npm install --legacy-peer-deps
+	NODE_ENV=production npm ci --legacy-peer-deps
 
 install-dev:
 	npm install --legacy-peer-deps
