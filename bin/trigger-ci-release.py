@@ -22,8 +22,6 @@ if not ENVIRONMENT or not FRONTEND_ROLLBAR_SERVER_ITEM_ACCESS_TOKEN:
 # Release frontend code from artifact S3 bucket to live
 #####################################################################
 
-# TODO: migrate this deployment code in to `heliumcli`, then it can be removed from deploy and frontend
-
 s3 = boto3.resource('s3')
 source_bucket_name = "heliumedu"
 source_bucket = s3.Bucket(source_bucket_name)
