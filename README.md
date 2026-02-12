@@ -57,7 +57,7 @@ instead, set `PLATFORM=amd64`.
 
 The backend `platform` is served from a separate repository and can be found [here](https://github.com/HeliumEdu/platform#readme).
 Using Docker, the `frontend` and `platform` containers can be started alongside each other to almost entirely
-emulate a `prod`-like environment locally using [the `deploy` project](https://github.com/HeliumEdu/deploy). For
+emulate a `prod`-like environment locally using [the `infra` project](https://github.com/HeliumEdu/infra). For
 functionality that still requires Internet-connected external services (ex. emails and text messages), provision
-[the `dev-local` Terraform Workspace](https://github.com/HeliumEdu/deploy/tree/main/terraform/environments/dev-local),
+[the `dev-local` Terraform Workspace](https://github.com/HeliumEdu/infra/tree/main/terraform/environments/dev-local),
 which is meant to work alongside local Docker development. 
