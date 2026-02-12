@@ -1885,6 +1885,9 @@ function HeliumCalendar() {
                 && (helium.USER_PREFS.profile === null || helium.USER_PREFS.profile.phone === null)) {
                 continue;
             }
+            if (helium.REMINDER_TYPE_CHOICES[i] == "Push" && reminder.type !== 3) {
+                continue;
+            }
 
             type_options +=
                 ("<option value=\"" + i + "\"" + (i === parseInt(reminder.type) ? " selected=\"true\"" : "") + ">"
