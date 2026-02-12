@@ -14,7 +14,7 @@ else
 
   echo "--> Helium directory structure not found, clone to $HELIUM_DIR"
 
-  git clone git@github.com:HeliumEdu/deploy.git $HELIUM_DIR
+  git clone git@github.com:HeliumEdu/infra.git $HELIUM_DIR
   cd $HELIUM_DIR
   make install
   cd projects/platform
