@@ -140,7 +140,6 @@ function Helium() {
      */
     this.check_token_exp = function () {
         const refresh_token = localStorage.getItem("refresh_token");
-        // TODO: replace hacky lock mechanism with an actual when/wait method (that handles retries with fresh token)
         const refresh_token_lock = localStorage.getItem('refresh_token_lock');
         if (refresh_token === null || refresh_token_lock === "true") {
             return;
@@ -310,8 +309,6 @@ function Helium() {
             response.jqXHR.hasOwnProperty('responseJSON') &&
             response.jqXHR.responseJSON !== undefined &&
             response.jqXHR.responseJSON.hasOwnProperty('detail')) {
-            // TODO: we could parse more API responses here, but may make more sense to just wait and improve error
-            //  handling when we rebuild the entire UI
             return response.jqXHR.responseJSON.detail;
         } else {
             return response.err_msg
@@ -592,8 +589,6 @@ $(document).ajaxError(function (event, jqXHR) {
         jqXHR.url.startsWith(helium.API_URL) &&
         jqXHR.url !== helium.API_URL + "/info" &&
         !jqXHR.url.startsWith(helium.API_URL + "/auth/token") &&
-        // TODO: this isn't ideal, but will work for now, since the reminder check also effectively acts as a
-        //  heartbeat for token refresh token refresh
         !jqXHR.url.startsWith(helium.API_URL + "/planner/reminders")) {
         helium.clear_access_token_reprompt_login();
     }

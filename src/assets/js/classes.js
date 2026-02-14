@@ -1038,8 +1038,6 @@ function HeliumClasses() {
             });
     };
 
-    // FIXME: these course-related functions should be prototyped off a Course object after the open source migration
-    // is finished
     this.on_day_of_week = function (schedule, day) {
         if (schedule == null) {
             return false;
@@ -1524,10 +1522,6 @@ function HeliumClasses() {
                                                                              helium.HE_TIME_STRING_CLIENT)
                                         .format(helium.HE_TIME_STRING_SERVER) : sun_end_time
                                 };
-                                // TODO: this is the result of an odd edge case that we shouldn't even be able to get
-                                // in to, where a class doesn't have an associated class schedule—there should be a
-                                // backend fix for this first, where class schedules are changed to a one-to-one
-                                // required relationship with a class, and then this edge case can be removed
                                 if (course.schedules.length === 0) {
                                     helium.ajax_calls.push(
                                         helium.planner_api.add_courseschedule(function (course_schedule) {
