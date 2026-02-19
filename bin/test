@@ -46,4 +46,4 @@ git pull
 cd $HELIUM_DIR
 ./projects/platform/bin/runserver
 ./projects/platform/bin/frontend-legacy
-make test-cluster
+FRONTEND_PROJECT=frontend-legacy PROJECT_APP_HOST=http://localhost:3000 make test-cluster
