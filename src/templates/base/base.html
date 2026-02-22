@@ -164,15 +164,27 @@
         &mdash; including native iOS &amp; Android apps.
         Classic Helium will remain available through at least Summer 2026,
         so there's no pressure to switch mid-term.
-        <button type="button"
-                onclick="document.getElementById('helium-new-banner').style.display='none'; localStorage.setItem('hnb_dismissed','1');"
+        <button type="button" id="helium-new-banner-dismiss"
                 style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 20px; color: #31708f; cursor: pointer; line-height: 1;"
                 aria-label="Dismiss">&times;</button>
     </div>
     <script>
-        if (localStorage.getItem('access_token') !== null && !localStorage.getItem('hnb_dismissed')) {
-            document.getElementById('helium-new-banner').style.display = 'block';
-        }
+        (function () {
+            var token = localStorage.getItem('access_token');
+            if (token === null) return;
+            try {
+                var payload = JSON.parse(atob(token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
+                var userId = payload.user_id || payload.sub || payload.id || 'anon';
+                var dismissKey = 'hnb_dismissed_' + userId;
+                if (!localStorage.getItem(dismissKey)) {
+                    document.getElementById('helium-new-banner').style.display = 'block';
+                }
+                document.getElementById('helium-new-banner-dismiss').addEventListener('click', function () {
+                    document.getElementById('helium-new-banner').style.display = 'none';
+                    localStorage.setItem(dismissKey, '1');
+                });
+            } catch (e) {}
+        })();
     </script>
 
     {% block content %}{% endblock %}
