@@ -157,14 +157,36 @@
         </nav>
     </div>
 
+    <div id="helium-new-banner" class="hidden-print" style="display: none; background: #d9edf7; border-bottom: 1px solid #bce8f1; color: #31708f; padding: 10px 40px 10px 20px; text-align: center; position: relative;">
+        <strong>Helium has a new home!</strong>
+        All core features are now available at
+        <a href="https://app.heliumedu.com" target="_blank" style="color: #31708f; font-weight: bold; text-decoration: underline;">app.heliumedu.com</a>
+        &mdash; including native iOS &amp; Android apps.
+        Classic Helium will remain available through at least Summer 2026,
+        so there's no pressure to switch mid-term.
+        <button type="button"
+                onclick="document.getElementById('helium-new-banner').style.display='none'; localStorage.setItem('hnb_dismissed','1');"
+                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 20px; color: #31708f; cursor: pointer; line-height: 1;"
+                aria-label="Dismiss">&times;</button>
+    </div>
+    <script>
+        if (localStorage.getItem('access_token') !== null && !localStorage.getItem('hnb_dismissed')) {
+            document.getElementById('helium-new-banner').style.display = 'block';
+        }
+    </script>
+
     {% block content %}{% endblock %}
 
     <footer class="hidden-print">
         <div class="container">
             <div class="row social-footer">
                 <div class="pull-right">
+                    <a href="https://apps.apple.com/us/app/helium-student-planner/id6758323154" style="color: #ffffff;" target="_blank">
+                        <img src="{{ ASSETS_PREFIX_VERSIONED }}/img/apple.png" alt="Download on the App Store" width="38" height="38"
+                             class="inline"/>
+                    </a>
                     <a href="https://groups.google.com/g/helium-edu/about" style="color: #ffffff;" target="_blank">
-                        <img src="{{ ASSETS_PREFIX_VERSIONED }}/img/android.png" alt="Android" width="38" height="38"
+                        <img src="{{ ASSETS_PREFIX_VERSIONED }}/img/play.png" alt="Get it on Google Play" width="38" height="38"
                              class="inline"/>
                     </a>
                     <a href="https://www.facebook.com/heliumedu" style="color: #ffffff;" target="_blank">
