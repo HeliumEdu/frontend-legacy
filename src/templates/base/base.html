@@ -157,7 +157,7 @@
         </nav>
     </div>
 
-    <div id="helium-new-banner" class="hidden-print" style="display: none; background: #d9edf7; border-bottom: 1px solid #bce8f1; color: #31708f; padding: 10px 40px 10px 20px; text-align: center; position: relative;">
+    <div id="helium-new-banner" class="hidden-print" style="display: none; background: #d9edf7; border-bottom: 1px solid #bce8f1; color: #31708f; padding: 10px 40px 7px 20px; text-align: center; position: relative;">
         <strong>Helium has a new home!</strong>
         All core features are now available at
         <a href="https://app.heliumedu.com" target="_blank" style="color: #31708f; font-weight: bold; text-decoration: underline;">app.heliumedu.com</a>
@@ -170,6 +170,8 @@
     </div>
     <script>
         (function () {
+            var path = window.location.pathname;
+            if (!path.startsWith('/planner') && !path.startsWith('/settings')) return;
             var token = localStorage.getItem('access_token');
             if (token === null) return;
             try {
