@@ -229,6 +229,58 @@ span.twitter-typeahead > input.form-control.input-sm.tt-query {
     margin: 60px 30px 80px 30px;
 }
 
+.store-badge-link {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.store-badge-link:hover {
+    text-decoration: none;
+}
+
+.web-badge-btn {
+    display: inline-block;
+    vertical-align: middle;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 22px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.web-badge-btn:hover,
+.web-badge-btn:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .store-badge-link,
+    .web-badge-btn {
+        display: block;
+        width: 160px;
+        margin: 6px auto;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .store-badge-link img {
+        width: 100%;
+        height: 48px;
+        object-fit: cover;
+    }
+
+    .web-badge-btn {
+        height: 48px;
+        line-height: 48px;
+        font-size: 13px;
+    }
+}
+
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
     margin: 0 auto;
 }
