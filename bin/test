@@ -44,6 +44,4 @@ fi
 git pull
 
 cd $HELIUM_DIR
-./projects/platform/bin/runserver
-./projects/platform/bin/frontend-legacy
 make test-cluster-legacy
