@@ -239,17 +239,41 @@ span.twitter-typeahead > input.form-control.input-sm.tt-query {
 }
 
 .web-badge-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     vertical-align: middle;
     height: 60px;
-    line-height: 60px;
-    padding: 0 22px;
+    padding: 0 16px;
+    gap: 10px;
     background-color: #1a1a1a;
     color: #ffffff;
     border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
     text-decoration: none;
+}
+
+.web-badge-btn .icon-globe {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.web-badge-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.web-badge-label {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.web-badge-name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .web-badge-btn:hover,
@@ -261,11 +285,13 @@ span.twitter-typeahead > input.form-control.input-sm.tt-query {
 @media (max-width: 767px) {
     .store-badge-link,
     .web-badge-btn {
-        display: block;
         width: 160px;
         margin: 6px auto;
         box-sizing: border-box;
-        text-align: center;
+    }
+
+    .store-badge-link {
+        display: block;
     }
 
     .store-badge-link img {
@@ -275,8 +301,16 @@ span.twitter-typeahead > input.form-control.input-sm.tt-query {
     }
 
     .web-badge-btn {
+        display: flex;
         height: 48px;
-        line-height: 48px;
+        justify-content: center;
+    }
+
+    .web-badge-btn .icon-globe {
+        font-size: 22px;
+    }
+
+    .web-badge-name {
         font-size: 13px;
     }
 }
