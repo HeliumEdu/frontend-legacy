@@ -2,10 +2,12 @@ FROM ubuntu:24.04 AS build
 
 ARG ENVIRONMENT=prod
 
-RUN apt-get --fix-missing update
-RUN apt-get install -y curl gnupg
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-RUN apt-get install -y nodejs rsync
+RUN apt-get --fix-missing update && \
+    apt-get install -y curl gnupg && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs rsync && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -24,8 +26,10 @@ RUN --mount=type=secret,id=frontend_rollbar_client_item_access_token,env=FRONTEN
 
 FROM ubuntu:24.04 AS frontend
 
-RUN apt-get --fix-missing update
-RUN apt-get install -y --no-install-recommends apache2
+RUN apt-get --fix-missing update && \
+    apt-get install -y --no-install-recommends apache2 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite
 
