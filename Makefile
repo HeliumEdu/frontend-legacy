@@ -34,7 +34,7 @@ test:
 	npm run test
 
 build-docker:
-	docker buildx build --build-arg ENVIRONMENT=$(ENVIRONMENT) --secret id=frontend_rollbar_client_item_access_token,env=FRONTEND_ROLLBAR_CLIENT_ITEM_ACCESS_TOKEN -t helium/frontend-legacy:$(PLATFORM)-latest -t helium/frontend-legacy:$(PLATFORM)-$(TAG_VERSION) --platform=linux/$(PLATFORM) --load .
+	docker buildx build --build-arg ENVIRONMENT=$(ENVIRONMENT) --secret id=frontend_rollbar_client_item_access_token,env=FRONTEND_ROLLBAR_CLIENT_ITEM_ACCESS_TOKEN -t helium/frontend:legacy-$(PLATFORM)-latest -t helium/frontend:legacy-$(PLATFORM)-$(TAG_VERSION) --platform=linux/$(PLATFORM) --load .
 
 run-docker:
 	docker compose up -d
@@ -47,7 +47,7 @@ restart-docker: stop-docker run-docker
 publish: build-docker
 	aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/heliumedu
 
-	docker tag helium/frontend-legacy:$(PLATFORM)-$(TAG_VERSION) public.ecr.aws/heliumedu/helium/frontend:legacy-$(PLATFORM)-$(TAG_VERSION)
+	docker tag helium/frontend:legacy-$(PLATFORM)-$(TAG_VERSION) public.ecr.aws/heliumedu/helium/frontend:legacy-$(PLATFORM)-$(TAG_VERSION)
 	docker push public.ecr.aws/heliumedu/helium/frontend:legacy-$(PLATFORM)-$(TAG_VERSION)
 
 	docker create --name frontend-legacy helium/frontend-legacy:$(PLATFORM)-$(TAG_VERSION)
