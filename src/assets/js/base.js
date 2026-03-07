@@ -667,6 +667,7 @@ $(document).ready(function () {
     } else {
         $("#register-nav").removeClass("hidden");
         $("#login-nav").removeClass("hidden");
+        $("#login-classic-nav").removeClass("hidden");
     }
 
     helium.set_active_tab_from_hash();
