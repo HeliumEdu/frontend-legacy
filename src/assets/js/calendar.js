@@ -397,7 +397,9 @@ function HeliumCalendar() {
         $("#homework-completed").prop("checked", false).trigger("change");
         $("#homework-grade").val("");
         $("#homework-grade-percent > span").text("");
-        $("#homework-comments").html("");
+        $("#homework-comments").html("").attr("contenteditable", "true").css("opacity", "").css("cursor", "");
+        $("#homework-comments").prev().find("button, .btn").prop("disabled", false).css("opacity", "");
+        $("#homework-comments-migrated").hide();
 
         $("tr[id^='attachment-']").remove();
         $("#no-attachments").show();
@@ -579,6 +581,11 @@ function HeliumCalendar() {
                                 $("#homework-grade-percent > span").text("");
                             }
                             $("#homework-comments").html(calendar_item_fields.comments);
+                            if (calendar_item_fields.notes !== null && calendar_item_fields.notes !== undefined) {
+                                $("#homework-comments").attr("contenteditable", "false").css("opacity", "0.6").css("cursor", "not-allowed");
+                                $("#homework-comments").prev().find("button, .btn").prop("disabled", true).css("opacity", "0.5");
+                                $("#homework-comments-migrated").show();
+                            }
 
                             $("tr[id^='attachment-']").remove();
                             if (calendar_item_fields.attachments.length === 0) {
