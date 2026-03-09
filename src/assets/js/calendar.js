@@ -585,6 +585,10 @@ function HeliumCalendar() {
                                 $("#homework-comments").attr("contenteditable", "false").css("opacity", "0.6").css("cursor", "not-allowed");
                                 $("#homework-comments").prev().find("button, .btn").prop("disabled", true).css("opacity", "0.5");
                                 $("#homework-comments-migrated").show();
+                            } else {
+                                $("#homework-comments").attr("contenteditable", "true").css("opacity", "").css("cursor", "");
+                                $("#homework-comments").prev().find("button, .btn").prop("disabled", false).css("opacity", "");
+                                $("#homework-comments-migrated").hide();
                             }
 
                             $("tr[id^='attachment-']").remove();
