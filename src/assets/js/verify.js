@@ -11,7 +11,8 @@
 
 (function () {
     "use strict";
-    const USERNAME = url('?username');
+    // Support both ?username= (legacy) and ?email= (new email template format)
+    const USERNAME = url('?username') || url('?email');
     const CODE = url('?code');
     const WELCOME_EMAIL = url('?welcome-email');
 
