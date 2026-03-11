@@ -70,11 +70,6 @@ function HeliumSettings() {
         $("#status_" + tab).html(msg).addClass("alert-danger").removeClass("hidden");
     };
 
-    self.email_pending = function (email_changing) {
-        ($("#id_email_verification_status")
-            .html('<i class="icon-time bigger-110 orange"></i> Pending verification of ' + email_changing));
-    };
-
     self.phone_pending = function (phone_changing) {
         $($("#id_phone_verification_status")
               .html('<i class="icon-time bigger-110 orange"></i> Pending verification of ' + phone_changing));
@@ -406,85 +401,6 @@ function HeliumSettings() {
         });
     });
 
-    $("#account-form").submit(function (e) {
-        // Prevent default submit
-        e.preventDefault();
-        e.returnValue = false;
-
-        $("#loading-account").spin(helium.SMALL_LOADING_OPTS);
-
-        helium.clear_form_errors($(this).attr("id"));
-
-        if ($("#id_old_password").val() !== '' || $("#id_password").val() !== '' || $("#id_password2").val() !== '') {
-            // If one is present, all three must be present
-            let has_error = false;
-            if ($("#id_old_password").val() === '') {
-                self.show_error("account", {"responseJSON": {"old_password": "This field is required."}});
-
-                has_error = true;
-            }
-            if ($("#id_password").val() === '') {
-                self.show_error("account", {"responseJSON": {"password": "This field is required."}});
-
-                has_error = true;
-            }
-            if ($("#id_password2").val() === '') {
-                self.show_error("account", {"responseJSON": {"password2": "This field is required."}});
-
-                has_error = true;
-            }
-            if (!has_error && $("#id_password").val() !== $("#id_password2").val()) {
-                self.show_error("account", {"responseJSON": {"password2": "You must enter matching passwords."}});
-
-                has_error = true;
-            }
-
-            if (has_error) {
-                $("#loading-account").spin(false);
-
-                return false;
-            }
-        }
-
-        $.ajax().always(function () {
-            const form = $("#account-form"), data = form.serializeArray();
-
-            for (let i = data.length - 1; i >= 0; --i) {
-                if (data[i].name.indexOf('password') !== -1 && data[i].value === '') {
-                    data.splice(i);
-                }
-            }
-
-            $.ajax({
-                       async: false,
-                       context: form,
-                       data: data,
-                       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                       type: 'PUT',
-                       url: helium.API_URL + '/auth/user/',
-                       error: function (xhr) {
-                           self.show_error("account", xhr);
-                       },
-                       success: function (data) {
-                           if (data.email_changing) {
-                               self.email_pending(data.email_changing);
-                           }
-
-                           helium.clear_form_errors("account-form");
-
-                           $("#id_old_password").val("");
-                           $("#id_password").val("");
-                           $("#id_password2").val("");
-
-                           $("#status_account").html("Changes saved.").addClass("alert-success")
-                               .removeClass("hidden alert-danger");
-
-                           $("#loading-account").spin(false);
-                       }
-                   });
-        });
-    });
-
     this.refresh_feeds = function () {
         if (helium.USER_PREFS.settings.private_slug === null || helium.USER_PREFS.settings.private_slug === "") {
             $("#enable-disable-feed").addClass("btn-success");
@@ -775,14 +691,6 @@ $(document).ready(function () {
         $("#id_default_reminder_offset").val(helium.USER_PREFS.settings.default_reminder_offset);
         $("#id_default_reminder_offset_type").val(helium.USER_PREFS.settings.default_reminder_offset_type);
         $("#id_phone").val(helium.USER_PREFS.profile.phone);
-        $("#id_username").val(helium.USER_PREFS.username);
-        $("#id_email").val(helium.USER_PREFS.email);
-
-        if (helium.USER_PREFS.email_changing === null) {
-            ($("#id_email_verification_status").html('<i class="icon-ok bigger-110 green"></i> Verified'));
-        } else {
-            helium.settings.email_pending(helium.USER_PREFS.email_changing);
-        }
 
         if (helium.USER_PREFS.profile.phone_changing !== null && helium.USER_PREFS.profile.phone_changing !== '') {
             helium.settings.phone_pending(helium.USER_PREFS.profile.phone_changing);
