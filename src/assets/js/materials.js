@@ -101,7 +101,6 @@ function HeliumMaterials() {
         $("#material-price").val("");
         $("#material-details").html("").attr("contenteditable", "true").css("opacity", "").css("cursor", "");
         $("#material-details").prev().find("button, .btn").prop("disabled", false).css("opacity", "");
-        $("#material-details-migrated").hide();
 
         $("#loading-material-modal").spin(false);
         $("#material-modal").modal("show");
@@ -351,15 +350,6 @@ function HeliumMaterials() {
                     $("#" + $(".open-website button").attr("for")).trigger("focusout");
                     $("#material-price").val(material.price);
                     $("#material-details").html(material.details);
-                    if (material.notes !== null && material.notes !== undefined) {
-                        $("#material-details").attr("contenteditable", "false").css("opacity", "0.6").css("cursor", "not-allowed");
-                        $("#material-details").prev().find("button, .btn").prop("disabled", true).css("opacity", "0.5");
-                        $("#material-details-migrated").show();
-                    } else {
-                        $("#material-details").attr("contenteditable", "true").css("opacity", "").css("cursor", "");
-                        $("#material-details").prev().find("button, .btn").prop("disabled", false).css("opacity", "");
-                        $("#material-details-migrated").hide();
-                    }
 
                     $("#loading-material-modal").spin(false);
                     $("#loading-materials").spin(false);
