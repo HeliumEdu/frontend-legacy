@@ -125,21 +125,6 @@
             <div class="space-24 visible-xs"></div>
 
             <div class="col-lg-4 align-center">
-                <img class="img-circle" src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_6.png"
-                     style="width: 140px; height: 140px; object-fit: cover; object-position: center top;"
-                     alt="At-a-Glance Schedules"/>
-
-                <h2>At-a-Glance Schedules</h2>
-
-                <p>See class and assignments details in views that make it easy to stay on top of due dates and keep
-                    your schedule neatly organized.</p>
-
-                <p><a class="btn btn-default" href="#classes" role="button">Read More &raquo;</a></p>
-            </div>
-
-            <div class="space-24 visible-xs"></div>
-
-            <div class="col-lg-4 align-center">
                 <img class="img-circle" src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_3.png"
                      style="width: 140px; height: 140px; object-fit: cover; object-position: center top;"
                      alt="Live Grade Tracker"/>
@@ -151,11 +136,41 @@
 
                 <p><a class="btn btn-default" href="#grades" role="button">Read More &raquo;</a></p>
             </div>
+
+            <div class="space-24 visible-xs"></div>
+
+            <div class="col-lg-4 align-center">
+                <img class="img-circle" src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_6.png"
+                     style="width: 140px; height: 140px; object-fit: cover; object-position: center top;"
+                     alt="At-a-Glance Schedules"/>
+
+                <h2>At-a-Glance Schedules</h2>
+
+                <p>See class and assignments details in views that make it easy to stay on top of due dates and keep
+                    your schedule neatly organized.</p>
+
+                <p><a class="btn btn-default" href="#classes" role="button">Read More &raquo;</a></p>
+            </div>
         </div>
 
         <div class="space-24"></div>
 
         <div class="row">
+            <div class="col-lg-4 align-center">
+                <img class="img-circle" src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_12.png"
+                     style="width: 140px; height: 140px; object-fit: cover; object-position: center top;"
+                     alt="Rich Notebook"/>
+
+                <h2>Rich Notebook</h2>
+
+                <p>Write rich notes linked directly to your work, or keep standalone notes for anything else—all in one organized notebook.</p>
+
+                <p><a class="btn btn-default" href="#notebook" role="button">Read More &raquo;</a>
+                </p>
+            </div>
+
+            <div class="space-24 visible-xs"></div>
+
             <div class="col-lg-4 align-center">
                 <img class="img-circle" src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_9.png"
                      style="width: 140px; height: 140px; object-fit: cover; object-position: center top;"
@@ -166,21 +181,6 @@
                 <p>Add due dates, required textbooks or tools, notes, priorities — and never overlook details again.</p>
 
                 <p><a class="btn btn-default" href="#assignments" role="button">Read More &raquo;</a>
-                </p>
-            </div>
-
-            <div class="space-24 visible-xs"></div>
-
-            <div class="col-lg-4 align-center">
-                <img class="img-circle" src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_10.png"
-                     style="width: 140px; height: 140px; object-fit: cover; object-position: center top;"
-                     alt="Supplies Organizer"/>
-
-                <h2>Supplies Organizer</h2>
-
-                <p>Keep track of supplies, books, equipment, and all your class materials, for each class and each day.</p>
-
-                <p><a class="btn btn-default" href="#materials" role="button">Read More &raquo;</a>
                 </p>
             </div>
 
@@ -229,15 +229,38 @@
             </div>
         </div>
 
-        <div id="classes"></div>
+        <div id="grades"></div>
         <hr class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-md-5">
                 <img class="featurette-image thumbnail img-responsive"
-                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_6.png"
-                     alt="At-a-Glance Schedules"/>
+                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_3.png"
+                     alt="Live Grade Tracker"/>
             </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Live Grade Tracker & Analysis.
+                    <span class="text-muted">The Bottom Line.</span>
+                </h2>
+
+                <p class="lead">
+                    Done calculating grades by hand? Us too. Helium updates your grades in real time—per class,
+                    category, and the entire term. See exactly which classes you’re rocking and where you need to pick
+                    up the pace. Weighted categories, progress charts, and trend indicators help you plan ahead (and
+                    catch problems early).
+                </p>
+
+                <p class="pull-right"><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
+                        class="icon-user"></i>
+                    Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
+                        class="icon-arrow-up icon-on-right"></i></a></p>
+            </div>
+        </div>
+
+        <div id="classes"></div>
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">At-a-Glance Schedules.
                     <span class="text-muted">The Brass Tacks.</span>
@@ -249,29 +272,6 @@
                     day, and "Todos" views to understand exactly what’s coming up and plan your time with confidence.
                 </p>
 
-                <p class="pull-right"><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
-                        class="icon-user"></i>
-                    Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
-                        class="icon-arrow-up icon-on-right"></i></a></p>
-            </div>
-        </div>
-
-        <div id="grades"></div>
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Live Grade Tracker & Analysis.
-                    <span class="text-muted">The Bottom Line.</span>
-                </h2>
-
-                <p class="lead">
-                    Done calculating grades by hand? Us too. Helium updates your grades in real time—per class,
-                    category, and the entire term. See exactly which classes you're rocking and where you need to pick
-                    up the pace. Weighted categories, progress charts, and trend indicators help you plan ahead (and
-                    catch problems early).
-                </p>
-
                 <p><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
                         class="icon-user"></i>
                     Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
@@ -279,8 +279,36 @@
             </div>
             <div class="col-md-5">
                 <img class="featurette-image thumbnail img-responsive"
-                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_3.png"
-                     alt="Live Grade Tracker"/>
+                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_6.png"
+                     alt="At-a-Glance Schedules"/>
+            </div>
+        </div>
+
+        <div id="notebook"></div>
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image thumbnail img-responsive"
+                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_12.png"
+                     alt="Rich Notebook"/>
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Rich Notebook.
+                    <span class="text-muted">The Full Picture.</span>
+                </h2>
+
+                <p class="lead">
+                    Your notes, in context. Write rich notes linked directly to your work—so the details you need are
+                    always right where you need them. Or keep standalone notes for anything else: lecture summaries,
+                    paper drafts, or anything you want to capture on the fly. Either way, everything lives in one
+                    organized notebook.
+                </p>
+
+                <p class="pull-right"><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
+                        class="icon-user"></i>
+                    Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
+                        class="icon-arrow-up icon-on-right"></i></a></p>
             </div>
         </div>
 
@@ -288,11 +316,6 @@
         <hr class="featurette-divider">
 
         <div class="row featurette">
-            <div class="col-md-5">
-                <img class="featurette-image thumbnail img-responsive"
-                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_9.png"
-                     alt="Featured 4"/>
-            </div>
             <div class="col-md-7">
                 <h2 class="featurette-heading">Detailed Assignment Planner.
                     <span class="text-muted">The Nitty Gritty.</span>
@@ -305,10 +328,15 @@
                     lives in one organized place.
                 </p>
 
-                <p class="pull-right"><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
+                <p><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
                         class="icon-user"></i>
                     Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
                         class="icon-arrow-up icon-on-right"></i></a></p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image thumbnail img-responsive"
+                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_9.png"
+                     alt="Featured 4"/>
             </div>
         </div>
 
@@ -316,6 +344,11 @@
         <hr class="featurette-divider">
 
         <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image thumbnail img-responsive"
+                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_10.png"
+                     alt="Featured 5"/>
+            </div>
             <div class="col-md-7">
                 <h2 class="featurette-heading">Supplies Organizer.
                     <span class="text-muted">The Meat & Potatoes.</span>
@@ -328,39 +361,6 @@
                     link digital tools to assignments.
                 </p>
 
-                <p><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
-                        class="icon-user"></i>
-                    Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
-                        class="icon-arrow-up icon-on-right"></i></a></p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image thumbnail img-responsive"
-                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_10.png"
-                     alt="Featured 5"/>
-            </div>
-        </div>
-
-        <div id="filters"></div>
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-5">
-                <img class="featurette-image thumbnail img-responsive"
-                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_5.png"
-                     alt="Custom Todos"/>
-            </div>
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Custom Todos & Filtered Lists.
-                    <span class="text-muted">The Nuts & Bolts.</span>
-                </h2>
-
-                <p class="lead">
-                    Calendar view doesn’t always cut it. Helium's "Todos" view give you a focused, flexible way
-                    to manage your workload. Sort assignments by class, priority, due date, materials, completion, or
-                    grade. Create targeted study plans, prep for exams, break down long-term projects,
-                    or quickly see what’s due next. When things get busy, this view helps you stay in control.
-                </p>
-
                 <p class="pull-right"><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
                         class="icon-user"></i>
                     Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
@@ -368,9 +368,42 @@
             </div>
         </div>
 
+        <div id="filters"></div>
         <hr class="featurette-divider">
 
         <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Custom Todos & Filtered Lists.
+                    <span class="text-muted">The Nuts & Bolts.</span>
+                </h2>
+
+                <p class="lead">
+                    Calendar view doesn’t always cut it. Helium’s "Todos" view give you a focused, flexible way
+                    to manage your workload. Sort assignments by class, priority, due date, materials, completion, or
+                    grade. Create targeted study plans, prep for exams, break down long-term projects,
+                    or quickly see what’s due next. When things get busy, this view helps you stay in control.
+                </p>
+
+                <p><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
+                        class="icon-user"></i>
+                    Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
+                        class="icon-arrow-up icon-on-right"></i></a></p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image thumbnail img-responsive"
+                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_5.png"
+                     alt="Custom Todos"/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image thumbnail img-responsive"
+                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_8.png"
+                     alt="Attachments &amp; Reminders"/>
+            </div>
             <div class="col-md-7">
                 <h2 class="featurette-heading">Attachments & Reminders.
                     <span class="text-muted">The Extra Mile.</span>
@@ -383,15 +416,10 @@
                     prepared for every class meeting, quiz, and project milestone.
                 </p>
 
-                <p><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
+                <p class="pull-right"><a class="btn btn-sm btn-primary" href="https://app.heliumedu.com/signup" role="button"><i
                         class="icon-user"></i>
                     Sign Me Up!</a> <a class="btn btn-sm btn-default" href="#overview" role="button">Back to Top<i
                         class="icon-arrow-up icon-on-right"></i></a></p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image thumbnail img-responsive"
-                     src="{{ ASSETS_PREFIX_VERSIONED }}/img/slider_8.png"
-                     alt="Attachments &amp; Reminders"/>
             </div>
         </div>
     </div>
