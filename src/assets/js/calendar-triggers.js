@@ -266,7 +266,7 @@
                             } else {
                                 helium.calendar.end.hour(start_time.hour());
                                 helium.calendar.end.minute(
-                                    start_time.minutes() + helium.USER_PREFS.settings.all_day_offset);
+                                    start_time.minutes() + 30);
                             }
                         } else if (((month_view && course.schedules.length === 0) ||
                                    (course.schedules.length > 0 && !helium.calendar.has_schedule(course.schedules[0])))
@@ -274,7 +274,7 @@
                             helium.calendar.start.hour(12);
                             helium.calendar.start.minute(0);
                             helium.calendar.end.hour(12);
-                            helium.calendar.end.minute(helium.USER_PREFS.settings.all_day_offset);
+                            helium.calendar.end.minute(30);
                         }
                     }
                 }, true, true, true));

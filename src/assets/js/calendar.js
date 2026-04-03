@@ -207,13 +207,13 @@ function HeliumCalendar() {
                         self.current_calendar_item.start.hasTime() ? self.current_calendar_item.end
                                                                    : (start_end_days_diff <= 1
                                                                       ? self.current_calendar_item.start.clone().add(
-                                                                           helium.USER_PREFS.settings.all_day_offset, "minutes")
+                                                                           30, "minutes")
                                                                       : self.current_calendar_item.end.clone());
                 } else {
                     self.start = self.current_calendar_item.start;
                     self.end =
                         self.current_calendar_item.end || self.current_calendar_item.start.clone()
-                                                           .add(helium.USER_PREFS.settings.all_day_offset, "minutes");
+                                                           .add(30, "minutes");
                 }
             }
         };
@@ -346,7 +346,7 @@ function HeliumCalendar() {
         self.start = start;
         self.end =
             (start.hasTime && start.hasTime()) ? end : (start_end_days_diff <= 1 ? start.clone()
-                .add(helium.USER_PREFS.settings.all_day_offset, "minutes") : end.clone());
+                .add(30, "minutes") : end.clone());
         self.all_day = start.hasTime && !start.hasTime();
         self.show_end_time =
             !self.all_day || (($("#calendar").fullCalendar("getView").name === self.DEFAULT_VIEWS[0] || $("#calendar")
@@ -377,7 +377,7 @@ function HeliumCalendar() {
                 self.end.minute(50);
             } else {
                 self.end.hour(12);
-                self.end.minute(helium.USER_PREFS.settings.all_day_offset);
+                self.end.minute(30);
             }
         }
 
@@ -1190,7 +1190,7 @@ function HeliumCalendar() {
                         helium.calendar.event_source_homework
                     ],
                     defaultTimedEventDuration: moment().hours(0)
-                        .minutes(helium.USER_PREFS.settings.all_day_offset).seconds(0)
+                        .minutes(30).seconds(0)
                         .format("HH:mm:ss"),
                     defaultView: self.DEFAULT_VIEWS[user_view_pref],
                     timezone: helium.USER_PREFS.settings.time_zone,
@@ -1427,7 +1427,7 @@ function HeliumCalendar() {
 
             self.last_good_date = moment("12:00 PM", "HH:mm A");
             self.last_good_end_date = self.last_good_date.clone();
-            self.last_good_end_date.add(helium.USER_PREFS.settings.all_day_offset, "minutes");
+            self.last_good_end_date.add(30, "minutes");
 
             // Customize the calendar header
             $(".fc-toolbar .fc-right").prepend(
@@ -2003,7 +2003,7 @@ function HeliumCalendar() {
         if ($("#homework-end-time").is(":visible")) {
             calendar_item_end_time = $("#homework-end-time").val();
         } else {
-            let end_offset = helium.USER_PREFS.settings.all_day_offset;
+            let end_offset = 30;
             const updated_end = moment_end_time.clone().add(end_offset, "minutes");
             // Check if the offset causes us to roll in to the next day, and if so, cut it off
             if (updated_end.day() !== moment_end_time.day()) {
