@@ -18,7 +18,7 @@ Released container images are published to [Helium's AWS ECR](https://gallery.ec
 
 This project is the result of separating the `frontend` code from the backend `platform`, with the intention of someday
 rewriting it in a modern framework. But we have not had the capacity (or expertise) to do that. Are you a frontend
-expert in search of an open source project and interested in joining forces? [Reach out](mailto:contact@alexlaird.com)
+expert in search of an open source project and interested in joining forces? [Reach out](mailto:support@heliumedu.com)
 and let us know!
 
 Be aware that this is legacy code, and we would love to have the capacity to completely rewrite it. In its current
