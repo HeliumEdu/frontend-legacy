@@ -105,23 +105,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Get latest platform release version
         id: platform_version
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        run: |
-          VERSION=$(gh api repos/HeliumEdu/platform/tags --jq '[.[] | select(.name | test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))][0].name')
-
-          if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
-            echo "Error: No version tags found in HeliumEdu/platform"
-            exit 1
-          fi
-
-          TAG="${VERSION#v}"
-
-          echo "Using latest platform version: ${VERSION} (tag: ${TAG})"
-          echo "tag=${TAG}" >> $GITHUB_OUTPUT
+        uses: HeliumEdu/.github/actions/determine-version@main
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repo: platform
       - name: Set platform container versions
         env:
-          PLATFORM_TAG: ${{ steps.platform_version.outputs.tag }}
+          PLATFORM_TAG: ${{ steps.platform_version.outputs.version }}
         run: |
           echo "PLATFORM_RESOURCE_IMAGE=public.ecr.aws/heliumedu/helium/platform-resource:amd64-${PLATFORM_TAG}" >> $GITHUB_ENV
           echo "PLATFORM_API_IMAGE=public.ecr.aws/heliumedu/helium/platform-api:amd64-${PLATFORM_TAG}" >> $GITHUB_ENV
