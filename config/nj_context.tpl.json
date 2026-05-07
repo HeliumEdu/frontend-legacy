@@ -42,14 +42,6 @@
         "logout": [
             "/js/redirecting.js"
         ],
-        "support": [
-            "/js/redirecting.js",
-            "/js/support.js"
-        ],
-        "docs": [
-            "/js/redirecting.js",
-            "/js/docs.js"
-        ],
         "status": [
             "/js/redirecting.js",
             "/js/status.js"

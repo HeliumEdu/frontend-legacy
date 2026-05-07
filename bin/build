@@ -61,8 +61,6 @@ nunjucks "*.html" config/nj_context.json -p src/templates --options config/nj_op
 printf "\nMoving files in to place for paths, including trailing slash ...\n"
 
 mkdir -p build/planner
-# Ensure /contact links to /support
-cp build/support.html build/contact.html
 # Ensure trailing slash happiness on planner pages
 mv build/planner_index.html build/planner/index.html
 mv build/planner_calendar.html build/planner/calendar.html
