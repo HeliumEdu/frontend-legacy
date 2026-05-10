@@ -1,5 +1,0 @@
-# robots.txt for https://www.heliumedu.com/
-User-agent: *
-Disallow: /planner
-Disallow: /settings
-Sitemap: https://www.heliumedu.com/sitemap.xml
