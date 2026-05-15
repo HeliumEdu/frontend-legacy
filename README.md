@@ -1,4 +1,6 @@
-<p align="center"><img src="https://www.heliumedu.com/img/helium-logo.png" /></p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HeliumEdu/www/main/src/assets/img/helium-logo.png" alt="Helium" width="300" />
+</p>
 
 [![Build](https://img.shields.io/github/actions/workflow/status/HeliumEdu/frontend-legacy/build.yml)](https://github.com/HeliumEdu/frontend-legacy/actions/workflows/build.yml)
 ![GitHub License](https://img.shields.io/github/license/heliumedu/frontend-legacy)
