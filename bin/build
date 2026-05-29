@@ -90,3 +90,5 @@ find "build" -type f -not -path "build/assets/*" -print0 | while IFS= read -r -d
     mkdir -p "build/$path_no_ext"
     cp $file "build/$path_no_ext/index.html"
 done
+
+cp -r src/assets/.well-known build/
