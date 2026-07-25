@@ -482,7 +482,7 @@ $(document).ready(function () {
     $("#loading-grades").spin(helium.SMALL_LOADING_OPTS);
 
     $(".grades-help").on("click", function () {
-        window.open("https://heliumedu.freshdesk.com/support/solutions/articles/159000418648-how-helium-calculates-your-grades");
+        window.open("https://landing.heliumedu.com/support/grades-and-progress/how-helium-calculates-your-grades/");
     });
 
     bootbox.setDefaults({

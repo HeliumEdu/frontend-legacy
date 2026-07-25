@@ -1831,7 +1831,7 @@ $(document).ready(function () {
     $("#dropzone-form").attr("action", helium.API_URL + "/planner/attachments/");
 
     $(".weight-help").on("click", function () {
-        window.open("https://heliumedu.freshdesk.com/support/solutions/articles/159000418670-setting-up-weighted-grading-assignment-categories");
+        window.open("https://landing.heliumedu.com/support/grades-and-progress/setting-up-weighted-grading-assignment-categories/");
     });
 
     /*******************************************
